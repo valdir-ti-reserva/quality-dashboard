@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "quality-dashboard-produc-44a3b"
-  }
+    "default": "quality-dashboard-produc-44a3b",
+    "staging": "quality-dashboard-stagin-4f6ed"
+  },
+  "targets": {}
 }
