@@ -1,3 +1,5 @@
+import logo from './logo.svg'
+
 const App = () => {
   return (
     <div style={{
@@ -7,8 +9,9 @@ const App = () => {
       alignItems: 'center',
       height: '100vh',
       width: '100vw',
-      fontFamily: 'roboto',
+      fontFamily: 'sans-serif',
     }}>
+      <img src={logo} alt="Logo" />
       <h1 style={{
         color: '#6EC177',
         margin: 0
