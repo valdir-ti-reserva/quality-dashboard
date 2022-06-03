@@ -11,7 +11,27 @@ export const useStyles = makeStyles({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingBottom: 30,
+        paddingBottom: 25,
+    },
+    navigationDrawer: {
+        width: 240,
+        border: 'none',
+        whiteSpace: 'nowrap',
+        overflowX: 'hidden',
+    },
+    navigationDrawerCollapse: {
+        width: 50,
+        border: 'none',
+    },
+    navigationToolBar: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        paddingRight: 5,
+    },
+    navigationToolBarCollapse: {
+        justifyContent: 'center',
+        paddingRight: 0,
     },
     navigationList: {
         display: 'flex',

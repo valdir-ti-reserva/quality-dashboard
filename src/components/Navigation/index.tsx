@@ -1,31 +1,42 @@
+import { useState } from 'react'
+
 import List from '@mui/material/List'
 import Drawer from '@mui/material/Drawer'
+import { IconButton } from '@mui/material'
+import { ChevronLeft, Menu } from '@mui/icons-material'
 
 import MenuItem from '../MenuItem'
 
 import { useStyles } from './styles'
 
-import Logo from '../../logo.svg'
+import Logo1 from '../../assets/logo1.svg'
+import Logo2 from '../../assets/logo2.svg'
 
 import Routes from '../../routes'
 
 const Navigation = () => {
     const classes = useStyles()
 
+    const [open, setOpen] = useState(true)
+
+    const toggleNavigation = () => {
+        setOpen(!open)
+    }
+
     return (
         <div>
             <Drawer
-                PaperProps={{
-                    style: {
-                        width: 240,
-                        border: 'none',
-                    }
-                }}
+                classes={{ paper: (`${classes.navigationDrawer} ${!open && classes.navigationDrawerCollapse}`) }}
                 variant='permanent'
-                open={true}
+                open={open}
             >
+                <div className={(`${classes.navigationToolBar} ${!open && classes.navigationToolBarCollapse}`)}>
+                    <IconButton onClick={toggleNavigation}>
+                        {open ? <ChevronLeft /> : <Menu />}
+                    </IconButton>
+                </div>
                 <div className={classes.navigationLogoContainer}>
-                    <img src={Logo} alt="Logo" className={classes.navigationLogo} />
+                    <img src={open ? Logo1 : Logo2} alt="Logo" className={classes.navigationLogo} />
                 </div>
                 <List className={classes.navigationList}>
                     {Routes.map((route: any) => {
