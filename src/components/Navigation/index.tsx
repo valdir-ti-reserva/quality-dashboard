@@ -6,8 +6,8 @@ import MenuItem from '../MenuItem'
 import { useStyles } from './styles'
 
 import Logo from '../../logo.svg'
-import Dashboard from '../../assets/DashboardIcon.svg'
-import DashboardActive from '../../assets/DashboardIconActive.svg'
+
+import Routes from '../../routes'
 
 const Navigation = () => {
     const classes = useStyles()
@@ -18,6 +18,7 @@ const Navigation = () => {
                 PaperProps={{
                     style: {
                         width: 240,
+                        border: 'none',
                     }
                 }}
                 variant='permanent'
@@ -26,13 +27,20 @@ const Navigation = () => {
                 <div className={classes.navigationLogoContainer}>
                     <img src={Logo} alt="Logo" className={classes.navigationLogo} />
                 </div>
-                <List>
-                    <MenuItem
-                        label="Dashboard"
-                        icon={Dashboard}
-                        activeIcon={DashboardActive}
-                        path="/"
-                    />
+                <List className={classes.navigationList}>
+                    {Routes.map((route: any) => {
+                        return (
+                            <>
+                                {route.path !== '/sign-out' && <div className={classes.navigationSpacer}></div>}
+                                <MenuItem
+                                    label={route.label}
+                                    icon={route.icon}
+                                    activeIcon={route.activeIcon}
+                                    path={route.path}
+                                />
+                            </>
+                        )
+                    })}
                 </List>
             </Drawer>
         </div>
