@@ -39,11 +39,12 @@ const Navigation = () => {
                     <img src={open ? Logo1 : Logo2} alt="Logo" className={classes.navigationLogo} />
                 </div>
                 <List className={classes.navigationList}>
-                    {Routes.map((route: any) => {
+                    {Routes.map((route: any, index: number) => {
                         return (
                             <>
                                 {route.path !== '/sign-out' && <div className={classes.navigationSpacer}></div>}
                                 <MenuItem
+                                    key={index}
                                     label={route.label}
                                     icon={route.icon}
                                     activeIcon={route.activeIcon}
