@@ -22,41 +22,42 @@ const routes = [
         path: '/',
         icon: DashboardIcon,
         activeIcon: DashboardIconActive,
-        component: Dashboard
+        component: <Dashboard />
     },
     {
         label: 'Accounts',
         path: '/accounts',
         icon: AccountsIcon,
         activeIcon: AccountsIconActive,
-        component: Accounts
+        component: <Accounts />
     },
     {
         label: 'Transactions',
         path: '/transactions',
         icon: TransactionsIcon,
         activeIcon: TransactionsIconActive,
-        component: Transactions
+        component: <Transactions />
     },
     {
         label: 'Secure',
         path: '/secure',
         icon: SecureIcon,
         activeIcon: SecureIconActive,
-        component: Secure
+        component: <Secure />
     },
     {
         label: 'Settings',
         path: '/settings',
         icon: SettingsIcon,
         activeIcon: SettingsIconActive,
-        component: Settings
+        component: <Settings />
     },
     {
         label: 'Sign Out',
         path: '/sign-out',
         icon: SignOutIcon,
         activeIcon: SignOutIcon,
+        component: <div />
     },
 ]
 

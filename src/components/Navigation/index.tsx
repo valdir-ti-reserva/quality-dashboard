@@ -24,38 +24,36 @@ const Navigation = () => {
     }
 
     return (
-        <div>
-            <Drawer
-                classes={{ paper: (`${classes.navigationDrawer} ${!open && classes.navigationDrawerCollapse}`) }}
-                variant='permanent'
-                open={open}
-            >
-                <div className={(`${classes.navigationToolBar} ${!open && classes.navigationToolBarCollapse}`)}>
-                    <IconButton onClick={toggleNavigation}>
-                        {open ? <ChevronLeft /> : <Menu />}
-                    </IconButton>
-                </div>
-                <div className={classes.navigationLogoContainer}>
-                    <img src={open ? Logo1 : Logo2} alt="Logo" className={classes.navigationLogo} />
-                </div>
-                <List className={classes.navigationList}>
-                    {Routes.map((route: any, index: number) => {
-                        return (
-                            <>
-                                {route.path !== '/sign-out' && <div className={classes.navigationSpacer}></div>}
-                                <MenuItem
-                                    key={index}
-                                    label={route.label}
-                                    icon={route.icon}
-                                    activeIcon={route.activeIcon}
-                                    path={route.path}
-                                />
-                            </>
-                        )
-                    })}
-                </List>
-            </Drawer>
-        </div>
+        <Drawer
+            classes={{ paper: (`${classes.navigationDrawer} ${!open && classes.navigationDrawerCollapse}`) }}
+            variant='permanent'
+            open={open}
+        >
+            <div className={(`${classes.navigationToolBar} ${!open && classes.navigationToolBarCollapse}`)}>
+                <IconButton onClick={toggleNavigation}>
+                    {open ? <ChevronLeft /> : <Menu />}
+                </IconButton>
+            </div>
+            <div className={classes.navigationLogoContainer}>
+                <img src={open ? Logo1 : Logo2} alt="Logo" className={classes.navigationLogo} />
+            </div>
+            <List className={classes.navigationList}>
+                {Routes.map((route: any, index: number) => {
+                    return (
+                        <>
+                            {route.path !== '/sign-out' && <div className={classes.navigationSpacer}></div>}
+                            <MenuItem
+                                key={index}
+                                label={route.label}
+                                icon={route.icon}
+                                activeIcon={route.activeIcon}
+                                path={route.path}
+                            />
+                        </>
+                    )
+                })}
+            </List>
+        </Drawer>
     )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 import { Icon, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 
@@ -19,6 +20,8 @@ const MenuItem = ({label, icon, activeIcon, path}: Props) => {
     return (
         <ListItem
             button
+            component={Link}
+            to={path}
             className={`${classes.menuItem} ${active && classes.menuItemActive}`}
         >
             <ListItemIcon>
